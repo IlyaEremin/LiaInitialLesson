@@ -1,5 +1,6 @@
 package com.lia.liainitiallesson;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,11 +16,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         View button = findViewById(R.id.intriguing_button);
         final TextView text = (TextView) findViewById(R.id.text);
-g
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-                text.setText("Hello Lia from Ilya [" + pressedNumber + "]!");
-                pressedNumber++;
+                startActivity(new Intent(MainActivity.this, SecondActivity.class));
+//
+//                text.setText("Hello Lia from Ilya [" + pressedNumber + "]!");
+//                pressedNumber++;
             }
         });
     }
